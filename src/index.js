@@ -1,12 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import ReduxPromise from 'redux-promise';
+import ReduxThunk from 'redux-thunk';
+
+import reducers from './reducers';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Login from './components/login';
+import { LOGIN_USER } from './actions/types';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise, ReduxThunk)(
+  createStore
+);
+const store = createStoreWithMiddleware(reducers);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const user = localStorage.getItem('user');
+
+if (user) {
+  store.dispatch({ type: LOGIN_USER, payload: user });
+}
+
+ReactDOM.render(
+  <Provider store={store}>
+    {/* <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/users" component={Users} />
+        <Route path="/contact" component={Contact} />
+        <Route component={Notfound} />
+      </Switch> */}
+
+    <Router>
+      <Route exact path='/' component={App} />
+      <Route path='/login' component={Login} />
+    </Router>
+  </Provider>,
+  document.getElementById('canvas')
+);
