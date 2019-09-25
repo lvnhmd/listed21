@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'MODULAR 14';
+    src: url('MODULAR-14.eot');
+    src: url('MODULAR-14.eot?#iefix') format('embedded-opentype'),
+        url('MODULAR-14.woff2') format('woff2'),
+        url('MODULAR-14.woff') format('woff'),
+        url('MODULAR-14.ttf') format('truetype'),
+        url('MODULAR-14.svg#MODULAR-14') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MODULAR Outline 14';
+    src: url('MODULAR-Outline14.eot');
+    src: url('MODULAR-Outline14.eot?#iefix') format('embedded-opentype'),
+        url('MODULAR-Outline14.woff2') format('woff2'),
+        url('MODULAR-Outline14.woff') format('woff'),
+        url('MODULAR-Outline14.ttf') format('truetype'),
+        url('MODULAR-Outline14.svg#MODULAR-Outline14') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MODULAR4';
+    src: url('MODULAR-4.eot');
+    src: url('MODULAR-4.eot?#iefix') format('embedded-opentype'),
+        url('MODULAR-4.woff2') format('woff2'),
+        url('MODULAR-4.woff') format('woff'),
+        url('MODULAR-4.ttf') format('truetype'),
+        url('MODULAR-4.svg#MODULAR-4') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
